@@ -1,9 +1,22 @@
 # https://realpython.com/python-ipaddress-module/
 
 from ipaddress import IPv4Network
+import string
+import random
+
+def get_random_string(length):
+    # choose from all lowercase letter
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    print("Random string of length", length, "is:", result_str)
+
+get_random_string(8)
+get_random_string(6)
+get_random_string(4)
 
 
-def create_ips():
+
+def get_ips():
     list_ips = []
     net = IPv4Network('192.0.0.0/8')
     for addr in net:
@@ -22,8 +35,10 @@ def print_network_information(ipv4net: IPv4Network) -> None:
 
 
 def main() -> None:
-    print_network_information(IPv4Network('192.0.0.0/8'))
-    create_ips()
+   # print_network_information(IPv4Network('192.0.0.0/8'))
+   # get_ips()
+
+
 
 
 if __name__ == '__main__':
