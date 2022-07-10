@@ -33,40 +33,39 @@ for x in temp:
 
 # build and populate data structure (2d array) to store the ips and ports
 
-m = []
+m=[]
+count = len(addresses)
 for ip in addresses:
     m.append(list((ip[0].split(":"),ip[1].split(":"))))
-print(m[0])
-print(m[0][0][1])
-"""
-format looks like...
-['192.168.42.1', '1337'], ['216.58.195.236', '22']
-['192.168.42.1', '1234'], ['216.58.195.237', '22']
 
+print(m[0])
+print(m[1])
+print(m[2])
+print(m[0][0][1])
+
+
+for i in range(count-2):
+    if (m[i][0][0] == m[i+1][0][0] == m[i+2][0][0]):
+#        print(m[i][0][0],m[i+1][0][0],m[i+2][0][0])
+        if (m[i][1][0] == m[i+1][1][0] == m[i+2][1][0]):
+#            print(m[i][1][0], m[i+1][1][0], m[i+2][1][0])
+            if (m[i][1][1] != m[i+1][1][1] != m[i+2][1][1]):
+#                print(m[i][1][1], m[i+1][1][1], m[i+2][1][1])
+                print(f' Source IP is {m[i][0][0]}')
+
+"""
+if the last 3 source IPs are EQ 
+    if the last 3 dst IPs are EQ
+        if the last dst ports are NEQ
+            return source IP
+
+
+format looks like...
 so m[0] gives ['192.168.42.1', '1337'], ['216.58.195.236', '22']
 m[0][0] => ['192.168.42.1', '1337']
 m[0][0][0] => 192.168.42.1 #src_ip
 m[0][0][1] => 1337 #src_port
-
-there are 3 key things here to figure out and track
-
-0.) how to track changing ports
-1.) how to track of each unique daddr
-2.) how to confirm the src ip is unique
-
-if the last 3 source IPs are the same &
-if the last 3 destination IPs are the same &
-the last 3 destination ports are unique
-
 """
-# destination ports
-# print(m)
-
-
-matrix = []
-dest_ipaddr = ['216.58.195.238','55']
-
-#print (ip_set)
 
 
 
