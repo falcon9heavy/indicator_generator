@@ -32,7 +32,6 @@ for x in temp:
 #    print(x)
 
 # build and populate data structure (2d array) to store the ips and ports
-
 m=[]
 count = len(addresses)
 for ip in addresses:
@@ -53,7 +52,6 @@ for i in range(count-2):
 #                print(m[i][1][1], m[i+1][1][1], m[i+2][1][1])
                 print(f' Source IP is {m[i][0][0]}')
 
-"""
 if the last 3 source IPs are EQ 
     if the last 3 dst IPs are EQ
         if the last dst ports are NEQ
@@ -65,6 +63,7 @@ so m[0] gives ['192.168.42.1', '1337'], ['216.58.195.236', '22']
 m[0][0] => ['192.168.42.1', '1337']
 m[0][0][0] => 192.168.42.1 #src_ip
 m[0][0][1] => 1337 #src_port
+
 """
 
 
